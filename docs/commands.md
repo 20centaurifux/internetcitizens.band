@@ -1,6 +1,13 @@
 # Available commands
 
-## addr
+## A
+
+### abort
+     /abort 
+
+     Aborts a pending request to shutdown or restart the ICB server.
+
+### addr
      /addr {street address}
      /addr
 
@@ -8,43 +15,59 @@ Sets the street address of the registered user. You can use a pipe as delimiter.
 
 Without an argument the street address is unset.
 
-## away
+### avatar
+     /avatar {url}
+     /avatar
+
+     Sets the avatar of the registered user.
+
+     Without an argument the avatar is unset.
+
+### away
      /away {message}
      /away
 
 Sets the away status or displays your away message when no argument is given.
 
-## beep
+## B
+
+### beep
      /beep {nick}
 
 Notifies a user.
 
-## boot
+### boot
      /boot {nick}
 
 Throws a user out of a group.
 
-## cancel
+## C
+
+### cancel
      /cancel {-q} {-n nick|-s address}
 
 Cancels an invitation. Use the -q option if you don't want to receive a confirmation.
 
-## cp
+### cp
      /cp {current password} {new password}
 
 Sets a new password for your registered nickname.
 
-## delete
+## D
+
+### delete
      /delete {password}
 
 Deletes your registered nickname.
 
-## drop
+### drop
      /drop {nickanem}
 
 Drops a user.
 
-## echoback
+## E
+
+### echoback
      /echoback {mode}
 
 Receive messages you send.
@@ -57,7 +80,7 @@ on          receive public messages you send
 verbose     receive public and personal messages you send
 ```
 
-## email
+### email
      /email {email address}
      /email
 
@@ -67,19 +90,23 @@ Without an argument the email address is unset.
 
 Confirm your email address to enable message forwarding or resetting your password.
 
-## exclude
+### exclude
      /m {nick} {message}
 
 Sends an open message excluding the specified nick.
 
-## forward
+## F
+
+### forward
      /forward
 
 Turns on personal message forwarding.
 
 Messages from the personal inbox are sent to the confirmed email address.
 
-## g
+## G
+
+### g
      /g {group}
 
 Joins another group.
@@ -99,13 +126,15 @@ Prefix Description
 ..     hidden group
 ```
 
-## help
+## H
+
+### help
      /help
      /help {topic|command}
 
 Displays a help page.
 
-## hush
+### hush
      /hush {-q} {-o} {-p} {-n nick|-s site}
 
 Hush nicknames or sites.
@@ -123,43 +152,51 @@ Argument         Description
 -p               hush personal messages only
 ```
 
-## invite
+## I
+
+### invite
      /invite {-q} {-r} {-n nick|-s address}
 
 Invites a nickname (-n) or address (-s) to a restricted group. Use the -r option if the invited user has to be registered to join.
 
 Set the -q option if you don't want to receive a confirmation.
 
-## log
+## L
+
+### log
      /log {level}
      /log
 
 Sets the log level (0-4). With no argument the current level is displayed.
 
-## m
+## M
+
+### m
      /m {nick} {message}
 
 Sends a private message to a user.
 
 Private messages sent to "server" are interpreted as command.
 
-## name
+## N
+
+### name
      /name {new nick}
 
 Changes your nickname.
 
-## news
+### news
      /news {item}
      /news
 
 Prints a news item. With no argument all news items are displayed.
 
-## noaway
+### noaway
      /noaway
 
 Removes the away status.
 
-## nobeep
+### nobeep
      /nobeep {mode}
 
 Changes the beep mode of the current session.
@@ -172,7 +209,7 @@ on          ignore beep messages
 verbose     ignore beep messages, but show a notification
 ```
 
-## notify
+### notify
      /notify {-q} {-n nick|-s site}
 
 Receive a notification when a nickname or site signs on/off.
@@ -186,17 +223,19 @@ Argument         Description
 -q               don't receive confirmation
 ```
 
-## nofoward
+### nofoward
      /noforward
 
 Turns off personal message forwarding.
 
-## noprotect
+### noprotect
      /noprotect
 
 Allow other users to see the email address of the registered nick.
 
-## phone
+## P
+
+### phone
      /phone {phone number}
      /phone
 
@@ -204,29 +243,42 @@ Sets the phone number of the registered user.
 
 Without an argument the phone number is unset.
 
-## p
+### p
      /p {password}
 
 Registers your nickname.
 
 A new record is created if you register a nickname for the very first time. Otherwise the password is checked.
 
-## protect
+### picture
+     /picture {nickname}
+
+     Displays the avatar of a registered user.
+
+### protect
      /protect
 
 Don't allow other users to see the email address of the registered nick.
 
-## read
+## R
+
+### read
      /read
 
 Reads the messages from your personal inbox. Messages get deleted as soon as they are being received.
 
-## reputation
+### restart
+     /restart
+     /restart {seconds}
+
+     Restarts the server.
+
+### reputation
      /reputation {nick}
 
 Displays the reputation value (0.0..1.0) of a logged in user.
 
-## rname
+### rname
      /rname {real name}
      /rname
 
@@ -234,12 +286,20 @@ Sets the real name of the registered user.
 
 Without an argument the real name is unset.
 
-## secure
+## S
+
+### secure
      /secure
 
 When this mode is activated a password is mandatory to register the nickname. Otherwise the nickname will be registered automatically if the address of the last successful registration matches your current address.
 
-## stats
+### shutdown
+     /shutdown
+     /shutdown {seconds}
+
+     Shuts down the server.
+
+### stats
      /stats {-s|-t|-m|-y|-a}
 
 Lists various server statistics. There are several time frame filters available:
@@ -254,7 +314,7 @@ y     this year
 a     overall
 ```
 
-## status
+### status
      /status {flags|options}
      /status
 
@@ -293,14 +353,16 @@ im {seconds}     idle-mod
 
 With no argument the group's current flags and options are displayed.
 
-## talk
+## T
+
+### talk
      /talk {-q} {-d} {-r} {-n nick|-s address}
 
 Adds a nickname (-n) or address (-s) to the list of allowed talkers in a controlled group. Use the -r option if the user has to be registered to talk. The -d option removes an entry from the list.
 
 Set the -q option if you don't want to receive a confirmation.
 
-## text
+### text
      /text {text}
      /text
 
@@ -308,7 +370,7 @@ Sets the arbitrary text of the registered user profile.
 
 Without an argument the text is unset.
 
-## topic
+### topic
      /topic {topic}
      /topic
 
@@ -316,37 +378,48 @@ Sets the group's topic.
 
 With no argument the topic is shown.
 
-## unsecure
+## U
+
+### unsecure
      /unsecure
 
 When this mode is activated the server tries to register your nickname automatically. This happens if the address of the last successful registration matches your current address.
 
-## v
+## V
+
+### v
      /v
 
 Prints server version.
 
-## wall
+### wall
      /wall {message}
 
 Sends an important broadcast message.
 
-## whereis
+## W
+
+### whereis
      /whereis {-a} {nick}
 
 Displays the address of a user. Use the -a flag to show more details.
 
-## whois
+### whoami
+     /whoami
+
+Displays current nick name.
+
+### whois
      /whois {nick}
 
 Displays the profile of the specified nickname.
 
-## write
+### write
      /write {nick} {message}
 
 Writes a message to a user. Messages are stored in a personal inbox.
 
-## w
+### w
      /w {-s|-g|.|group}
 
 Displays a list of available groups and their members.
@@ -361,7 +434,7 @@ Argument         Description
 {group name}     lists the specified group
 ```
 
-## www
+### www
      /www {website}
      /www
 
