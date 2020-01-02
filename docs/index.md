@@ -9,4 +9,4 @@ This server hosts an ICB server called [Fuchsschwanz](https://github.com/20centa
 * internetcitizens.band, port 7326
 * internetcitizens.band, port 7327 (TLS)
 
-You're welcome to test the _very_ _experimental_ web front-end: [http://chat.internetcitizens.band](http://chat.internetcitizens.band)
+You're welcome to test the _very_ _experimental_ web front-end: [https://chat.internetcitizens.band](https://chat.internetcitizens.band)
